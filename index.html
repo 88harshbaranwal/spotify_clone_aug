@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <a href="#">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARkAAACzCAMAAACKPpgZAAAAwFBMVEX39/dSul8FBwgAAABUvmH9+v1TvWD6+PpVwWIDAAb/+/9KuFhEtlMAAANQuV1DtlIvajc4fkFGn1IaOR9Bk0xQtl09ikdOsVsrYTNKqFYpXDGu27Pu9e9Emk8lUiuGzI7e7uB1xn81dz4RJBUhSScIDgvS6dSAyoldvmm5371qw3XK5s2Oz5Y1eD4kUCofRSUVLhqh1qeo2a7k8OULFg4RJRaY0Z47hUUOHRHA4cRkwG97yIPN59AYMxwKFQ5sw3meGQnWAAALS0lEQVR4nO2dh3LiOhSGcVxkXLEBg2khhNDrkgRI7m7e/62uZENCkRtgSyb+Z3aGyYad9TfnHJ0iyblcpkyZMmXKlClTpkyZMmWiXwCJd4Q+kf7v0CDEQ5Ia7d54W6/Xl/DPcNtrr4Ak8b8YEIQC2tvl40DXdUVR5J3gR10Xnt7rvQb/C/FAKo3x+xdEImsacy5Ng4h05nHYBvwvggMftrccISgYJkeSZV143DZ+BxyEZcLowVT21gNt52l4/3AAv1oOwmP5pqP3x7l7hsPnxk+RsbiSFWbZkO6UDZ+rD5SLsOwMR56075EN5MJcwcVlo/Tvjg2AXOSrsOzgKI8rifTD3FBAGl/jR0eSlXdof3ciafWk34iLw0Ye3odLAX6p38KRfqQpo3twKak9UG7KxWGj/0m72QD+zy0d6UfKqJHqaAMaX7c3GFeavk2xR0m9yxLekGgmqe1RSHU9Ni5I8lcjlWgAmMQLBqJh2ikMNiD3dNu1GidNGacODWh8xA8GBZthyuIwWA3ii73HaOqpQgNWTDJgoGDSR/pxwytJMKlCAxpJgoFo0uJQIJdQjPlBk5J0GIySWJWO0fTSsHhL/cTBwBVqRX82LC3jqiF90TCknztQ/DjukgAv+YlyfwKrW/V7o0p5pzsKgw9CYGAUprqEkt6Tj77f0ijuSQBCQcaV/Emv0SSc+55KGdKKRpoQ9CUGTXcp9SfQI+lLSHKf0vWJ3Lq0lz6m0Wj4Oonk91jagDQFnBpRJigCFHcs9CPhWjRKnb4gHCqVQThEqLJtNptrozMtuOp0Omur2TTtMvpbROlCMjAIkwZxKlgWBDERRcFuGoVa8R/ro5fFrNqxzAoidAEgeUlbEPZbsSEUzrYK3Rf32dX8g4/y6g7RW6tQsjlkQFHIaAplRgNWHiu2IHKVUqHoPKsvkXNEznf+VtcIT3g68jtdkYbHRhlBZErVZ2QmkZgcyrGgbqfJhKVDW6Rp4JoPYqkb2VK86UxtQQwDR/5Dk9Hwf3AmA7lcTeWQznMVmk4gHMrae5j/oVC8HRdXMPK81EqBcJQtPYkw2J4v2Vzn1mB2cP5VTY7zNRqKGp/8JybKvF4fYLzgLIyyn+HobWqMpnG+ZAtmHCazEww6NdubjbykxWj4+nn8FawYyThs5k0vNhpDCxnp69yZYiYDxbJFLza0uBM2/xXsADL57zKA3RcNUQOT6sWGljwYDLH57wb7oPk9iPym2G3VvtVqFd9efyCFZjO3RZzV0FFWSk+4xgxnnBiNy+S5VZiWmjYjYsVVzNIaVuMPoessli1g0NDiTvhikuv+oEGO89rqNO1d98V7yd11cAS71GltQuFh5+fZjUxFAwv859GZEVrwuVQV2crfQrMsRqmY3X4OYxq110A6bPXMarRPGtyJX3p1ZsTm7EFV3wqlciQoh3wgnopbrvvQYStnX9RpsBncmr1/MJErh24f+OGx17MHbzjs9Myf6Ag0CUyZIBymVHvxaPSwtTN3kofkyYB2QvM31AZrqTg2bOuczIS8O+GzmbjgVIzFedMHYzPagHwIxvc5YxPHmbNTNuz6fN3WSXPxyvNilCDatSM2Kls+/y2FfAiWLjvcdTKkjDSfhE5VPWDDGphGlkJ+wt2INM3epbiMbZslyzA6aDpZ6BiGVTJtp2QIN5+EbFo7NnlseUBBFhx+aXKYoCFla/HiOZ9sFYxmqPEb9Km5851NCVtSki+3QS+MzaBc1raqxX0pjZ8/qfvGxKJqmIEZImRjGWuvnjD5+gAMA8lAKua06yAJN5FTVRePVQmgI3jblvZBmgyu03kksWy12EvGlAjPplqCthOEHktGJk7Gs57cqXrN8BbV6XOj4j9F8SBDGExQoifMr24HoybGtBLZcoiPt/lHPzI3GsehScHad8REJRm/RE94udU4DpaSNTtKP0Mmfa7Hl0zgACGKYMwpWkJopyJeHviTufGgUmWf10xINpST8bCZ01FT+FlKnv1nhLMbuskw3Jt6+mRID4v5rNpZr9clR2vLmBZq3eKGDTFMybMbK0wsVqiOMwx3MMN1oCxmBcssw8xe/NkD7Nbc8CdMudJcF7rPAXjy7KKJrZWOJK/IggnKZ8Sq+4zoWWfTJuqZ+9bSqOwUyk3DmTV50lHZWSXIpYjv8Qxq6YmW4yNzI8oOTbRNtmI5wxQPNixrBqAhnwNjd+gdiBPtUnDhjMMjihWj6wUnjxkyHYp83RSiQX7FcQJOZKwZvu7CtMWPyBBvkYNxzCdUBLG8LmJiTv4lYLMecTLt+M/uQIcsqKdsVH93omDghNmjd3sJIrN+PnYqVcVMDA7IkN8vzSd0dJ3jSotDNurCN85QsClYGiU1b4Js3n58CjtLOSBDujiANpPggVtOMF52dsMW/fMZ4okeDMFBjWCM3IrA3X/GlJ3UxSkXgpd3rlxwi6uZ/+9pGumlKexY5RsJqo8qtmkZHVhDzouLt9d/m9fN4m8RlphGya4EzprEynTWLZgBhRMV55NDLk6ISdm2OrW/m+/9naqq5l2p+77Eplg1zIovHi7EvjYKliYYgoNvtUJ7yprT1lvebw7nrjj53axpbV+1V0vpEQ/AIbaJcOV1zd2mGXa6on7Pmi6FQ8EmEfwRnkOJpZBbe0+EDGxmXQZHG1EQZoICjdC8/LwgMp1Z6YIhJSWnVSTf+yDE4uXHS5FY9qETcdSEbpGjIMwEDnCvHh9At2r5nGbCSJOpMJmALTRlPBn1YKV2Vyy/+MyyczMCGwoKbVe837ot/jsKM/s9MurLZlFs1Xb3QrRmxbdXN83xABSJDQVb0Vz5uhM33RuNywSmch3LtCuCuCsJuH2hULbNdWfmJD24mO34VCgw5PdB7OXvTlwXJbtor1mxsDbd9B9fILmb+Cqm0cIfNGDZAhPqLDstzgSNxnd14qz5ogiT2nLI2y+cCzawBw1U9rkS4l+gZGVC4v3b5IK7ZzMElEM6ZeegwanZLIK/qw2oMRmPayGuFTpo0D01HNYKJEx+w+uB4mpfCWKl8HLEhq0GZcR03UAT44EVjllvDtgEk6Eo/iLxn/H1PDnugE2wN1F2iXK8twxy4jrvxmL1Neh3NRq6eYfi4z2ywjFu/zdvB5oM+aHBsWK/mhLG4nl3GpjpUWcyHjet3FTO5qMgURZlkJIYcAdLnlBnMuTvwEWi7WK0nRrYd4gnKhqv7cyh6om0P2kfpBl4iP8i7E9UTJlwIveyA1cyva88kIhenkzntck7xZwJ+4uCLTPeApEulr4xGLpf/UXqhTMpeOUMmZcUUXePKU5SAi/oxIi6EhunpN8S54DZUu5LSCSicEpevAja8bxs3FsKjRU2TnwvWTTyYwpcyRU/TrJMoPm9TWfit8mhkT9TsCr9iI/7cM+3lH6qwEA0/yWzQil0zd3CiG8n0eLT6diqGE1gFf9b2VP3RnZXINePN9hocipeBIwTv4wzsZE/VmkFA8vL+OKwpk9AylalI/GNp3g8SlNS8rZxTwGpHoNHacpTI72etBe/+rp1QizLQynNnrQX4IfyLddvTX+8A4NxxTcmNzMbTRn1Uh5hjiS1+/pN7EYZDFO9JJ0LSL1P5Vo2msLUc/fiSD+CbPrKNemNBu3lDrkgAan9Ll8YcDRZf9reKRckwDeGIz2y4WiaIry3+fuKL2cCfHs5iAJHkxXlcZy7dy5IgAftP196mJijybLOTH4HFleA5xvb9w9IxxMPhKLoQr/eBr8Hy06ITq8+GSm6AgEhaZrmflAUXR88Lscrnr+z5CW0AOAlqdEeD5fvk37/azTq9x/fl/Vtb5WTfi+VHwEIiIeIHMFPEMmvZ5IpU6ZMmTJlypQpU6ZM9Ot/mfoC6ZE7Uc0AAAAASUVORK5CYII="
+                    alt="logo">
+            </a>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span><i class="fa-solid fa-house"></i>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa-solid fa-magnifying-glass"></i>Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa-solid fa-books"></i>Library</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span><i class="fa-solid fa-square-plus"></i>Creat Playlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa-solid fa-heart"></i>Liked Songs</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="policies">
+            <ul>
+                <li>
+                    <a href="#">Cookies</a>
+                </li>
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="topbar">
+            <div class="prev-next-buttons">
+                <button type="button" class="fa fas fa-chevron-left"></button>
+                <button type="button" class="fa fas fa-chevron-right"></button>
+            </div>
+
+
+            <div class="navbar">
+                <ul>
+                    <li>
+                        <a href="#">Premium</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                    <li>
+                        <a href="#">Download</a>
+                    </li>
+                    <li class="divider">|</li>
+                    <li>
+                        <a href="#">Sign Up</a>
+                    </li>
+                </ul>
+                <button type="button">Log In</button>
+            </div>
+        </div>
+        <div class="spotify-playlists">
+            <h2>Try something else</h2>
+            <div class="list">
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Ka96PzmqmqvXB7Pac8QhxSw1-IYmNMHzfkOotOuGrZU7o0yrGnGya7NNr1tFp88En5o&usqp=CAU"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Rema & selon Gomez are on top of the...</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Remix!!</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Rock Classic</h4>
+                    <p>Rockstar</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Chill Hits</h4>
+                    <p>Aashiqi-2</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1421217336522-861978fdf33a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Lofi-songs</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Atif Aslam's Best-Hits</p>
+                </div>
+            </div>
+            <h2>Spotify original & Exclusive shows</h2>
+            <div class="list">
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Ka96PzmqmqvXB7Pac8QhxSw1-IYmNMHzfkOotOuGrZU7o0yrGnGya7NNr1tFp88En5o&usqp=CAU"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Rema & selon Gomez are on top of the...</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Remix!!</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Rock Classic</h4>
+                    <p>Rockstar</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Chill Hits</h4>
+                    <p>Aashiqi-2</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1421217336522-861978fdf33a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Lofi-songs</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Atif Aslam's Best-Hits</p>
+                </div>
+            </div>
+            <h2>Trending now</h2>
+            <div class="list">
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Ka96PzmqmqvXB7Pac8QhxSw1-IYmNMHzfkOotOuGrZU7o0yrGnGya7NNr1tFp88En5o&usqp=CAU"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Rema & selon Gomez are on top of the...</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Remix!!</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Rock Classic</h4>
+                    <p>Rockstar</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Chill Hits</h4>
+                    <p>Aashiqi-2</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1421217336522-861978fdf33a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Lofi-songs</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Atif Aslam's Best-Hits</p>
+                </div>
+            </div>
+            <h2>Featured Charts</h2>
+            <div class="list">
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Ka96PzmqmqvXB7Pac8QhxSw1-IYmNMHzfkOotOuGrZU7o0yrGnGya7NNr1tFp88En5o&usqp=CAU"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Rema & selon Gomez are on top of the...</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Remix!!</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Rock Classic</h4>
+                    <p>Rockstar</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Chill Hits</h4>
+                    <p>Aashiqi-2</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1421217336522-861978fdf33a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Lofi-songs</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Atif Aslam's Best-Hits</p>
+                </div>
+            </div>
+            <h2>Shows to try</h2>
+            <div class="list">
+                <div class="item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Ka96PzmqmqvXB7Pac8QhxSw1-IYmNMHzfkOotOuGrZU7o0yrGnGya7NNr1tFp88En5o&usqp=CAU"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Rema & selon Gomez are on top of the...</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Remix!!</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Rock Classic</h4>
+                    <p>Rockstar</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Chill Hits</h4>
+                    <p>Aashiqi-2</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1421217336522-861978fdf33a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjR8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Lofi-songs</p>
+                </div>
+
+                <div class="item">
+                    <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"/>
+                    <div class="play">
+                        <span class="fa fa-play"></span>
+                    </div>
+                    <h4>Today's Top Hits</h4>
+                    <p>Atif Aslam's Best-Hits</p>
+                </div>
+            </div>
+
+            <hr>
+        </div>
+        <div class="preview">
+            <div class="text">
+                <h6>Preview of Spotify</h6>
+                <p>Sign up to get unlimited songs ans podcasts with occasional ads. No credit card needed.</p>
+            </div>
+            <div class="button">
+                <button type="button">Sign up free</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
